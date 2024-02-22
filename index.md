@@ -3,6 +3,27 @@ layout: home
 title: Home
 ---
 
+# collections
+
+## springboots
+{% for springboot in site.springboots  %}
+  <h4>
+    <a href="{{ springboot.url }}">
+      {{ springboot.title | markdownify }}
+    </a>
+  </h4>
+{% endfor %}
+
+# Index
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
 # About
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

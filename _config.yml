@@ -1,5 +1,5 @@
 title: Shawn Jim
-description: 北方に魚がいます,その名は塩です。
+description:
 baseurl: ""
 url: https://shawnjim.com
 
@@ -7,11 +7,11 @@ theme: cvless
 
 # site settings
 taglong: 当兔子开始奔跑
-tagshort: 简历
+tagshort:  奔跑兔
 
 # author settings
 author:
-  name: Shawn Jim <金振潇>
+  name: Shawn Jim
   email: jinzhenxiao@apache.org
 photo: assets/files/photo.jpg
 address: Shenzheng China
@@ -25,6 +25,21 @@ social:
 #  instagram: username
 #  linkedin: username
 #  stackoverflow: 0000000/username
+
+# collections
+collections:
+  springboots:
+    order:
+      - 2019-07-12-初识SpringBoot-第一篇_创建一个SpringBoot工程.md
+      - 2019-07-19-初识SpringBoot-第二篇_配置文件详解.md
+      - 2019-07-24-初识SpringBoot-第三篇_日志相关整合.md
+      - 2019-07-26-初识SpringBoot-第四篇_整合thymeleaf-国际化配置.md
+      - 2019-07-26-初识SpringBoot-第五篇_Spring-MVC配置及原理-拦截器应用.md
+      - 2019-07-27-初识SpringBoot-第六篇_使用jdbcTemplate访问数据库.md
+      - 2019-07-27-初识SpringBoot-第七篇_Mybatis整合.md
+      - 2019-07-30-初识SpringBoot-第八篇_SpringDataJpa整合.md
+      - 2019-07-31-初识SpringBoot-第九篇_自定义Starter.md
+    output: true
 
 # build settings
 permalink: pretty
