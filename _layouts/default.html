@@ -22,6 +22,32 @@
     </div>
   </div>
 
+  <!-- 回到顶部按钮 -->
+  <button id="back-to-bottom" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">底部</button>
+  <!-- 回到底部按钮 -->
+  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">顶部</button>
+
+
+
+  <script>
+      // 当用户滚动页面时显示/隐藏按钮
+      window.onscroll = function() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.getElementById("back-to-top").style.display = "block";
+          } else {
+              document.getElementById("back-to-top").style.display = "none";
+          }
+
+          if (document.body.scrollTop < document.body.scrollHeight - window.innerHeight - 20 ||
+              document.documentElement.scrollTop < document.documentElement.scrollHeight - window.innerHeight - 20) {
+              document.getElementById("back-to-bottom").style.display = "block";
+          } else {
+              document.getElementById("back-to-bottom").style.display = "none";
+          }
+      };
+  </script>
+
+
   <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.url }}"></script>
   {% if page.title != "404" %}
   <script src="{{ '/assets/js/darkmode.js' | prepend: site.url }}"></script>

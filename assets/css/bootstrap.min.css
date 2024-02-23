@@ -706,6 +706,55 @@ progress {
     background-color: #555; /* 鼠标悬停时的背景颜色 */
 }
 
+/* 回到顶部按钮样式 */
+#back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 80px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+/* 回到底部按钮样式 */
+#back-to-bottom {
+    position: fixed;
+    bottom: 60px;
+    right: 80px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+/* 日间模式样式 */
+[data-theme="light"] #back-to-top {
+    background-color: #f8f9fa; /* 浅灰色背景 */
+    color: #333; /* 深色文字 */
+}
+
+/* 日间模式样式 */
+[data-theme="light"] #back-to-bottom {
+    background-color: #f8f9fa; /* 浅灰色背景 */
+    color: #333; /* 深色文字 */
+}
+
+/* 夜间模式样式 */
+[data-theme="dark"] #back-to-top {
+    background-color: #333; /* 深色背景 */
+    color: #f8f9fa; /* 浅色文字 */
+}
+/* 夜间模式样式 */
+[data-theme="dark"] #back-to-bottom {
+    background-color: #333; /* 深色背景 */
+    color: #f8f9fa; /* 浅色文字 */
+}
+
 .skills-container {
     display: flex;
     flex-wrap: wrap;
