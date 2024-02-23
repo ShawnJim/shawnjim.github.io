@@ -51,6 +51,10 @@ collections:
       - 2020-07-05-初探k8s-ConfigMap外部化配置(七).md
       - 2020-07-05-初探k8s-kubernetes-dashboard管理(八).md
     output: true
+  bigdata:
+    order:
+      - 2023-07-23-Kudu读&写表异常问题修复&总结.md
+    output: true
 
 # build settings
 permalink: pretty
