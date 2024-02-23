@@ -755,6 +755,31 @@ progress {
     color: #f8f9fa; /* 浅色文字 */
 }
 
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pagination a,
+.pagination span {
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pagination span.disabled {
+    background-color: #e2e6ea;
+    color: #aaa;
+}
+
+.pagination a:hover {
+    background-color: #e2e6ea;
+}
+
+
 .skills-container {
     display: flex;
     flex-wrap: wrap;

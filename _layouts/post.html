@@ -10,5 +10,20 @@ layout: default
     <p class="lead">{{ page.lead }}</p>
     {{ content }}
   </main>
+
+    <div class="pagination">
+        {% if page.previous %}
+        <a href="{{ page.previous.url }}" class="previous">&laquo; 上一页</a>
+        {% else %}
+        <span class="previous disabled">&laquo; 上一页</span>
+        {% endif %}
+        {% if page.next %}
+        <a href="{{ page.next.url }}" class="next">下一页 &raquo;</a>
+        {% else %}
+        <span class="next disabled">下一页 &raquo;</span>
+        {% endif %}
+    </div>
+
+
   {% include footer.html %}
 </article>
