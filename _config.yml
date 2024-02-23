@@ -33,6 +33,8 @@ customer-collections:
   - bigdata
   - note
   - posts
+  - thinking
+  - data-structures-with-algorithms
 
 collections:
   backend:
@@ -98,6 +100,13 @@ collections:
   multithreading:
     name: 多线程
     output: true
+  thinking:
+    name: 阅读 & 思考
+    output: true
+  data-structures-with-algorithms:
+    name: 数据结构与算法
+    output: true
+
 
 # build settings
 permalink: pretty
