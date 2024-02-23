@@ -35,6 +35,7 @@ customer-collections:
   - posts
   - thinking
   - data-structures-with-algorithms
+  - computer
 
 collections:
   backend:
@@ -105,6 +106,9 @@ collections:
     output: true
   data-structures-with-algorithms:
     name: 数据结构与算法
+    output: true
+  computer:
+    name: 计算机组成
     output: true
 
 
