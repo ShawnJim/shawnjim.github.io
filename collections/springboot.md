@@ -1,8 +1,8 @@
 ---
 layout: collections
-title: Spring Boots
-label: springboots
-permalink: /collections/springboots/
+title: Spring Boot
+label: springboot
+permalink: /collections/springboot/
 ---
 
 <!-- Content for the Spring Boots collection -->

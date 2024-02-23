@@ -1,0 +1,17 @@
+# Windows 命令相关
+
+
+
+## 查询被占用端口并kill
+
+```basic
+PC> netstat -aon | findstr "${被占用端口}"
+PC> kill ${进程id}
+
+# 例
+PS C:\Users\Administrator> netstat -aon | findstr "8081"
+  TCP    0.0.0.0:8081           0.0.0.0:0              LISTENING       29260
+  TCP    [::]:8081              [::]:0                 LISTENING       29260
+PS C:\Users\Administrator> kill 29260
+```
+

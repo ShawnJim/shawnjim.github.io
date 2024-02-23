@@ -28,7 +28,7 @@ social:
 
 # collections
 collections:
-  springboots:
+  springboot:
     order:
       - 2019-07-12-初识SpringBoot-第一篇_创建一个SpringBoot工程.md
       - 2019-07-19-初识SpringBoot-第二篇_配置文件详解.md
@@ -54,6 +54,8 @@ collections:
   bigdata:
     order:
       - 2023-07-23-Kudu读&写表异常问题修复&总结.md
+    output: true
+  note:
     output: true
 
 # build settings
