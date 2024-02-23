@@ -9,6 +9,10 @@ tags:
   - jdbcTemplate
   - mysql
 ---
+
+- toc
+{: toc }
+
 > `Spring Framework`对数据库的操作在`JDBC`上面做了深层次的封装，通过`依赖注入`功能，可以将 `DataSource` 注册到`JdbcTemplate`之中，使我们可以轻易的完成对象关系映射，并有助于规避常见的错误，在`SpringBoot`中我们可以很轻松的使用它。
 
 <!-- more -->

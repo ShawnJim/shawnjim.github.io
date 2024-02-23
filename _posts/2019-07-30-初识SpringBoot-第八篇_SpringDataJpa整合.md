@@ -9,6 +9,10 @@ tags:
   - SpringDataJpa
 ---
 
+- toc
+{: toc }
+
+
 >Java Persistence API是一种标准技术，可让您将对象“映射”到关系数据库。该`spring-boot-starter-data-jpa`POM提供了上手的快捷方式。它提供以下关键依赖项：
 
 <!-- more -->

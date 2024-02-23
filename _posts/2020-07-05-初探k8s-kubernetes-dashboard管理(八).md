@@ -9,6 +9,10 @@ tags:
     - dashboard
 ---
 
+- toc
+{: toc }
+
+
 > Kubernetes仪表板是Kubernetes集群的基于Web的通用UI。它允许用户管理集群中运行的应用程序并对其进行故障排除，以及管理集群本身。
 
 <!-- more -->

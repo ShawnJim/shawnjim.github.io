@@ -8,6 +8,10 @@ tags:
   - Spring
   - SpringMVC
 ---
+
+- toc
+{: toc }
+
 > Spring Boot有许多包含Spring MVC的启动器。请注意，一些启动器包含对Spring MVC的依赖，而不是直接包含它。本节回答有关Spring MVC和Spring Boot的常见问题。
 
 Spring Boot为Spring MVC提供自动配置，适用于大多数应用程序。

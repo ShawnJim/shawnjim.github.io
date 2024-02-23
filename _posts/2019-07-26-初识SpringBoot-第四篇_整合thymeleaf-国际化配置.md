@@ -8,6 +8,10 @@ tags:
   - Spring
   - thymeleaf
 ---
+
+- toc
+{: toc }
+
 > 模板引擎（这里特指用于Web开发的模板引擎）是为了使[用户界面](https://baike.baidu.com/item/用户界面)与业务数据（内容）分离而产生的，它可以生成特定格式的文档，用于网站的模板引擎就会生成一个标准的[HTML](https://baike.baidu.com/item/HTML)文档。
 
 <!-- more -->

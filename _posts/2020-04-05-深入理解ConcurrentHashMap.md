@@ -10,6 +10,10 @@ tags:
   - 源码
 ---
 
+- toc
+{: toc }
+
+
 ## Base1.7
 
 jdk1.7中concurrentHashMap由Segment数组，HashEntry组成，和HashMap一样,是数组加链表的组成结构。

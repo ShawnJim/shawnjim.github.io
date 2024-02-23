@@ -10,6 +10,10 @@ tags:
   - ArrayList
 ---
 
+- toc
+{: toc }
+
+
 ## 底层实现
 
 > ArrayList底层是由默认容量大小为10的Object数组实现

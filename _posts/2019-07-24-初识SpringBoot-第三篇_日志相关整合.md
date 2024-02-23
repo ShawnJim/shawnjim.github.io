@@ -9,6 +9,10 @@ tags:
   - slf4j
   - log
 ---
+
+- toc
+{: toc }
+
 >Spring Boot使用[Commons Logging](https://commons.apache.org/logging)进行所有内部日志记录，但保留底层日志实现。为[Java Util Logging](https://docs.oracle.com/javase/8/docs/api//java/util/logging/package-summary.html)，[Log4J2](https://logging.apache.org/log4j/2.x/)和 [Logback](https://logback.qos.ch/)提供了默认配置 。在每种情况下，记录器都预先配置为使用控制台输出，同时还提供可选的文件输出。  
 <!-- more -->
 默认情况下，如果使用“Starters”，则使用**Logback**进行日志记录。还包括适当的**Logback**路由，以确保使用**Java Util Logging**，**Commons Logging**，**Log4J**或**SLF4J**的依赖库都能正常工作。  

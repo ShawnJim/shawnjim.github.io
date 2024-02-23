@@ -8,6 +8,10 @@ tags:
     - kubernetes
     - nginx-ingress
 ---
+
+- toc
+{: toc }
+
 ## Ingress 是什么？
 
 [Ingress](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#ingress-v1beta1-networking-k8s-io) 公开了从集群外部到集群内 [services](https://kubernetes.io/docs/concepts/services-networking/service/) 的 HTTP 和 HTTPS 路由。 流量路由由 Ingress 资源上定义的规则控制。
