@@ -688,21 +688,21 @@ progress {
 }
 
 [data-theme="light"] #collection-list a {
-    color: #007bff; /* Bootstrap 默认的链接颜色 */
+    color: #3b818c; /* Bootstrap 默认的链接颜色 */
 }
 
 /* 夜间模式样式 */
 [data-theme="dark"] #collection-list {
-    background-color: #333; /* 深色背景 */
+    background-color: rgba(170,177,182,0.26); /* 深色背景 */
     color: #f8f9fa; /* 浅色文字 */
 }
 
 [data-theme="dark"] #collection-list a {
-    color: #9abfff; /* 淡蓝色链接 */
+    color: #3b818c; /* 淡蓝色链接 */
 }
 
 [data-theme="dark"] #collection-list a:hover {
-    color: #0056b3; /* 鼠标悬停时的颜色 */
+    color: #3b818c; /* 鼠标悬停时的颜色 */
     background-color: #555; /* 鼠标悬停时的背景颜色 */
 }
 
@@ -730,6 +730,25 @@ progress {
     cursor: pointer;
     display: none;
     z-index: 1000;
+}
+
+@media (max-width: 480px) {
+
+    /* 回到顶部按钮样式 */
+    #back-to-top {
+        bottom: 80px;
+        right: 20px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    /* 回到底部按钮样式 */
+    #back-to-bottom {
+        bottom: 40px;
+        right: 20px;
+        border-radius: 5px;
+        padding: 10px;
+    }
 }
 
 /* 日间模式样式 */
