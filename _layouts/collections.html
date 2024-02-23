@@ -10,11 +10,13 @@ permalink: /collections/
 <article id="collections">
   {% include header.html %}
   <div class="container">
+    <h1>{{ page.title }}</h1>
+    <p>
+    {{ content }}
+    <p>
+    {% include collection-posts.html label=page.label %}
     <div class="row">
       <div class="col">
-        <h1>{{ page.title }}</h1>
-        <p>
-        {{ content }}
         {% if collection_items %}
           <ul>
             {% for item in collection_items %}
@@ -26,6 +28,7 @@ permalink: /collections/
         {% else %}
           <p>No items in this collection.</p>
         {% endif %}
+        <p>
       </div>
     </div>
   </div>

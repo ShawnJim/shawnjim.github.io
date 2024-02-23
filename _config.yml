@@ -27,8 +27,42 @@ social:
 #  linkedin: username
 
 # collections
+customer-collections:
+  - backend
+  - distributed-operational
+  - bigdata
+  - note
+  - posts
+
 collections:
+  backend:
+    name: 后端框架
+    output: true
+    sub:
+      - springboot
+      - jvm
+      - multithreading
+  distributed-operational:
+    name: 分布式 & 运维
+    output: true
+    sub:
+      - k8s
+  bigdata:
+    name: 大数据
+    order:
+      - 2023-07-23-Kudu读&写表异常问题修复&总结.md
+    output: true
+  note:
+    name: 笔记
+    output: true
+    sub:
+      - linux
+      - interview
+  posts:
+    name: 归档
+    output: true
   springboot:
+    name: SpringBoot
     order:
       - 2019-07-12-初识SpringBoot-第一篇_创建一个SpringBoot工程.md
       - 2019-07-19-初识SpringBoot-第二篇_配置文件详解.md
@@ -41,6 +75,7 @@ collections:
       - 2019-07-31-初识SpringBoot-第九篇_自定义Starter.md
     output: true
   k8s:
+    name: K8s
     order:
       - 2020-06-20-初探k8s-阿里云安装k8s公网ip部署(一).md
       - 2020-07-04-初探k8s-安装CNI网络插件calico(二).md
@@ -51,11 +86,17 @@ collections:
       - 2020-07-05-初探k8s-ConfigMap外部化配置(七).md
       - 2020-07-05-初探k8s-kubernetes-dashboard管理(八).md
     output: true
-  bigdata:
-    order:
-      - 2023-07-23-Kudu读&写表异常问题修复&总结.md
+  linux:
+    name: linux中间件相关
     output: true
-  note:
+  interview:
+    name: 面试相关
+    output: true
+  jvm:
+    name: jvm
+    output: true
+  multithreading:
+    name: 多线程
     output: true
 
 # build settings

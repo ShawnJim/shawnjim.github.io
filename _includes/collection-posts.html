@@ -1,0 +1,32 @@
+{% assign variable = include.label %}
+{% assign sub_collections = "" | split: "" %}
+{% for collection in site.collections %}
+    {% if collection.label == variable %}
+        {% for sub in collection.sub %}
+            {% assign sub_collections = sub_collections | push: sub %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+{% for sub in sub_collections %}
+    {% for collection in site.collections %}
+        {% if collection.label == sub %}
+        <div class="row">
+          <div class="col">
+            <h1>{{ collection.name }}</h1>
+            <p></p>
+            {% if collection.docs %}
+            <ul>
+                {% for post in collection.docs %}
+                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+            <p></p>
+            {% else %}
+              <p>No items in this collection.</p>
+            {% endif %}
+            <p>
+          </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endfor %}

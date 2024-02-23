@@ -1,6 +1,13 @@
 <div id="collection-list">
-  <h1 id="about">Collections</h1>
+  <h1 id="about">Links</h1>
   {% for collection in site.collections %}
-    <a href="{{ '/collections/' | append: collection.label }}">{{ collection.label | capitalize }}</a>
+    {% if site.customer-collections contains collection.label and collection.name != "归档" %}
+      <a href="{{ '/collections/' | append: collection.label }}">{{ collection.name | capitalize }}</a>
+    {% endif %}
+  {% endfor %}
+  {% for collection in site.collections %}
+    {% if site.customer-collections contains collection.label and  collection.name == "归档" %}
+      <a href="{{ '/collections/' | append: collection.label }}">{{ collection.name | capitalize }}</a>
+    {% endif %}
   {% endfor %}
 </div>

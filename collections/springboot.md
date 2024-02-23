@@ -1,7 +1,7 @@
 ---
 layout: collections
-title: Spring Boot
-label: springboot
+title: 后端 & 框架
+label: backend
 permalink: /collections/springboot/
 ---
 
