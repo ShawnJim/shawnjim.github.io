@@ -21,10 +21,10 @@ phone: +86 155 0253 1057
 social:
   github: ShawnJim
   x: ulShawnjim
+  stackoverflow: 12645351/shawn-jim
 #  facebook: username
 #  instagram: username
 #  linkedin: username
-#  stackoverflow: 0000000/username
 
 # collections
 collections:
@@ -39,6 +39,17 @@ collections:
       - 2019-07-27-初识SpringBoot-第七篇_Mybatis整合.md
       - 2019-07-30-初识SpringBoot-第八篇_SpringDataJpa整合.md
       - 2019-07-31-初识SpringBoot-第九篇_自定义Starter.md
+    output: true
+  k8s:
+    order:
+      - 2020-06-20-初探k8s-阿里云安装k8s公网ip部署(一).md
+      - 2020-07-04-初探k8s-安装CNI网络插件calico(二).md
+      - 2020-07-04-初探k8s-通过资源文件部署应用(三).md
+      - 2020-07-05-初探k8s-安装nginx-ingress控制器(四).md
+      - 2020-07-05-初探k8s-准备数据卷(五).md
+      - 2020-07-05-初探k8s-使用数据卷(六).md
+      - 2020-07-05-初探k8s-ConfigMap外部化配置(七).md
+      - 2020-07-05-初探k8s-kubernetes-dashboard管理(八).md
     output: true
 
 # build settings

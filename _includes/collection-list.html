@@ -1,0 +1,6 @@
+<div id="collection-list">
+  <h1 id="about">Collections</h1>
+  {% for collection in site.collections %}
+    <a href="{{ '/collections/' | append: collection.label }}">{{ collection.label | capitalize }}</a>
+  {% endfor %}
+</div>

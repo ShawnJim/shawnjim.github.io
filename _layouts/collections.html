@@ -1,0 +1,36 @@
+---
+layout: default
+title: Collections
+permalink: /collections/
+---
+
+{% assign collection_name = page.label | default: 'default' %}
+{% assign collection_items = site[collection_name] | sort: 'title' %}
+
+<article id="collections">
+  {% include header.html %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>{{ page.title }}</h1>
+        <p>
+        {{ content }}
+        {% if collection_items %}
+          <ul>
+            {% for item in collection_items %}
+              <li>
+                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>No items in this collection.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% include footer.html %}
+</article>
+
+

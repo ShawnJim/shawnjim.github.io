@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+
+  {% if page.title == "Home" %}{% include particles-home.html %}{% endif %}
+  {% if page.title == "404" %}{% include particles-404.html %}{% endif %}
+
+  <div class="container">
+    <div class="row justify-content-center">
+      {% if page.title == "Home" %}
+        <div class="collections col col-sm-2 col-md-2 col-lg-2">
+          {% include collection-list.html %}
+        </div>
+      {% endif %}
+
+      <div class="col col-sm-9 col-md-9 col-lg-9">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.url }}"></script>
+  {% if page.title != "404" %}
+  <script src="{{ '/assets/js/darkmode.js' | prepend: site.url }}"></script>
+  {% endif %}
+  {% if page.title == "Home" or page.title == "404" %}
+  <script src="assets/js/particles.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  {% endif %}
+</body>
+
+</html>
