@@ -2,6 +2,7 @@
 layout: post
 title: 初识SpringBoot-第一篇：创建一个SpringBoot工程
 lead: 
+comments: true
 categories: SpringBoot
 tags: 
   - java

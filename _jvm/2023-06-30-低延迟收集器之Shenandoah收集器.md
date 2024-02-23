@@ -2,7 +2,8 @@
 layout: post
 title: Shenandoah垃圾回收器
 lead:
-categories:
+comments: true
+categories: 
   - jvm
 ---
 

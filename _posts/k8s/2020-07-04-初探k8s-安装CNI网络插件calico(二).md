@@ -2,6 +2,7 @@
 layout: post
 title: 初探k8s-安装CNI网络插件calico(二)
 lead: 
+comments: true
 categories: k8s
 tags:
     - linux

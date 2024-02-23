@@ -2,6 +2,7 @@
 layout: post
 title: 初识SpringBoot-第七篇：Mybatis整合
 lead: 
+comments: true
 categories: SpringBoot
 tags:
   - java

@@ -2,6 +2,7 @@
 layout: post
 title: 深入理解ArrayList
 lead: 
+comments: true
 categories:
   - 数据结构
 tags:

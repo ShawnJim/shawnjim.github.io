@@ -2,6 +2,7 @@
 layout: post
 title: 初识SpringBoot-第五篇：Spring MVC配置及原理 & 拦截器应用
 lead: 
+comments: true
 categories: SpringBoot
 tags:
   - java

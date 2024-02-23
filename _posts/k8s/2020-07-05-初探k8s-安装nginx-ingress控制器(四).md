@@ -2,6 +2,7 @@
 layout: post
 title: 初探k8s-安装nginx-ingress控制器(四)
 lead: 
+comments: true
 categories: k8s
 tags:
     - linux

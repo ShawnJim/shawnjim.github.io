@@ -2,7 +2,8 @@
 layout: post
 title: 深入理解ConcurrentHashMap
 lead: 
-categories:
+comments: true
+categories: 
   - 数据结构
 tags:
   - java

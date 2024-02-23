@@ -2,6 +2,7 @@
 layout: post
 title: 初识SpringBoot-第三篇：日志相关整合
 lead: 
+comments: true
 categories: SpringBoot
 tags:
   - java

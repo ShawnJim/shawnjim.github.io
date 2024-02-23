@@ -2,6 +2,7 @@
 layout: post
 title: 初探k8s-kubernetes-dashboard管理(八)
 lead: 
+comments: true
 categories: k8s
 tags:
     - linux
