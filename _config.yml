@@ -111,18 +111,9 @@ collections:
     name: 计算机组成
     output: true
 
-#
-jekyll_analytics:
-  Plausible:
-    domain: 'shawnjim.com'   # The domain configured in plausible
-    source: 'https://plausible.io/js/script.js' # The source of the javascript
-
 # build settings
 permalink: pretty
 exclude:
   - docker-compose.yml
   - LICENSE
   - README.md
-
-plugins:
-  - jekyll-analytics
