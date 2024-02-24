@@ -4,7 +4,6 @@ baseurl: ""
 url: https://shawnjim.com
 
 theme: cvless
-default_theme: "light"
 
 # site settings
 taglong: 当兔子坐上蒸汽列车
