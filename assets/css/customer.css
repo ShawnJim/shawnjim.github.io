@@ -145,22 +145,24 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 20px;
+    row-gap: 1px;
+    margin-top: 30px;
 }
 
 .skill-badge {
-    margin: 2px;
+    margin: 1px;
 }
 
 @media (max-width: 480px) {
     .skills-container {
         justify-content: center;
-        margin-top: 2px;
+        margin-top: 20px;
         gap: 1px;
+        row-gap: 0.1rem;
     }
 
     .skill-badge {
-        margin: 1px;
+        margin: 1px; /* 减小边距 */
     }
 }
 
