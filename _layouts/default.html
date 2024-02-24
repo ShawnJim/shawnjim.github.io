@@ -46,6 +46,14 @@
   </script>
 
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log("121211111")
+      var theme = sessionStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    });
+  </script>
+
   <script src="{{ '/assets/js/bootstrap.min.js' | prepend: site.url }}"></script>
   {% if page.title != "404" %}
   <script src="{{ '/assets/js/darkmode.js' | prepend: site.url }}"></script>
@@ -54,7 +62,6 @@
   <script src="assets/js/particles.min.js"></script>
   <script src="assets/js/main.js"></script>
   {% endif %}
-
 </body>
 
 </html>
