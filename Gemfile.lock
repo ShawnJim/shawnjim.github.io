@@ -45,7 +45,6 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-analytics (0.1.14)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-gist (1.5.0)
@@ -102,7 +101,6 @@ PLATFORMS
 
 DEPENDENCIES
   cvless (~> 2.2)
-  jekyll-analytics
 
 BUNDLED WITH
    2.5.6
