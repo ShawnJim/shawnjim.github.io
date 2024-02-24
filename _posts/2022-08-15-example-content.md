@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Example content
+description: Example content
 lead: A long post that showcases style elements.
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Home
+description: Shawn Jim的个人博客
 ---
 
 # 关于

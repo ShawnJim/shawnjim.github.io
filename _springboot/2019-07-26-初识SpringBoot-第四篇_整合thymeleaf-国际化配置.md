@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 初识SpringBoot-第四篇：整合thymeleaf & 国际化配置
+description: 初识SpringBoot-第四篇：整合thymeleaf & 国际化配置
 lead: 
 comments: true
 categories: SpringBoot

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What Jekyll is
+description: What Jekyll is
 lead: A short post to demonstrate the layout.
 ---
 

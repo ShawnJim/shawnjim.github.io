@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 初识SpringBoot-第八篇：SpringDataJpa整合
+description: 初识SpringBoot-第八篇：SpringDataJpa整合
 lead: 
 comments: true
 categories: SpringBoot

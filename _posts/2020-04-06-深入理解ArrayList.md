@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 深入理解ArrayList
+description: 深入理解ArrayList
 lead: 
 comments: true
 categories:

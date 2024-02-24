@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 深入理解LinkedList
+description: 深入理解LinkedList
 lead: 
 categories:
   - 数据结构

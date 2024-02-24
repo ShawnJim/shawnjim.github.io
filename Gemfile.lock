@@ -101,6 +101,7 @@ PLATFORMS
 
 DEPENDENCIES
   cvless (~> 2.2)
+  jekyll-sitemap
 
 BUNDLED WITH
    2.5.6

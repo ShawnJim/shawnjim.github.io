@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 初识SpringBoot丨第九篇：自定义Starter
+description: 初识SpringBoot丨第九篇：自定义Starter
 lead: 
 comments: true
 categories: SpringBoot

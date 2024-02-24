@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 初识SpringBoot-第六篇：使用jdbcTemplate访问数据库
+description: 初识SpringBoot-第六篇：使用jdbcTemplate访问数据库
 lead: 
 comments: true
 categories: SpringBoot

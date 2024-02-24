@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 初探k8s-ConfigMap外部化配置(七)
+description: 初探k8s-ConfigMap外部化配置(七)
 lead: 
 comments: true
 categories: k8s

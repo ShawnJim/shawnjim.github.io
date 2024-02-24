@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 初识SpringBoot-第二篇：配置文件详解
+description: 初识SpringBoot-第二篇：配置文件详解
 lead: 
 comments: true
 categories: SpringBoot
