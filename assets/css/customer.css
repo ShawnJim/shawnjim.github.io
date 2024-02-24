@@ -271,3 +271,16 @@ main h1.post-title {
         display: inline-block; /* 在小屏幕上显示 */
     }
 }
+
+#jumper-home svg {
+  /* 250% of its original size */
+    transform: scale(1.4);
+    margin-bottom: 0.6rem;
+    margin-right: 0.4rem;
+}
+
+#slogan svg {
+  /* 250% of its original size */
+    transform: scale(1);
+    margin-bottom: 0.3rem;
+}
