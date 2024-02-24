@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Home
-description: Shawn Jim的个人博客
+description: 金振潇<Shawn Jim> 的个人博客
 ---
 
 # 关于
