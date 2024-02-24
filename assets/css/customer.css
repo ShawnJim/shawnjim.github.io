@@ -117,14 +117,21 @@
 }
 
 .article-stats {
-    margin-top: 20px;
+    margin-top: 40px;
     font-size: 0.9rem;
     color: #666;
 }
 
 .article-stats span {
     display: inline-block;
+    font-size: 1.0rem;
     margin-right: 10px;
+}
+
+.article-stats time {
+    /*display: inline-block;*/
+    font-size: 1.3rem;
+    margin-right: 20px;
 }
 
 .article-stats i {
@@ -143,6 +150,18 @@
 
 .skill-badge {
     margin: 2px;
+}
+
+@media (max-width: 480px) {
+    .skills-container {
+        justify-content: center;
+        margin-top: 2px;
+        gap: 1px;
+    }
+
+    .skill-badge {
+        margin: 1px;
+    }
 }
 
 .pagination {
@@ -181,5 +200,21 @@
 [data-theme="dark"].pagination span {
     background-color: #343A40; /* 深色背景 */
     color: #f8f9fa; /* 浅色文字 */
+}
+
+main h1.post-title {
+    text-align: center;
+}
+
+#busuanzi_container_site_pv {
+    display: inline-block;
+    font-size: .875em;
+    font-weight: 300;
+}
+
+#busuanzi_container_site_uv {
+    display: inline-block;
+    font-size: .875em;
+    font-weight: 300;
 }
 

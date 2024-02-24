@@ -6,11 +6,15 @@ layout: default
   {% include header.html %}
   <main>
     <h1 class="post-title">{{ page.title }}</h1>
-    <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date: "%B %e, %Y" }}</time>
+
+<!--    <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date"> {{ post.date | date: "%Y-%m-%d" }} </time>-->
     <p class="lead">{{ page.lead }}</p>
+
     <div class="article-stats">
-        <span class="word-count"><i style="transform: scale(5.5);">{% include svg/code.svg %}</i> 字数：{{ page.content | number_of_words }} 字</span>
-        <span class="reading-time"><i style="transform: scale(2.5);">{% include svg/timer.svg %}</i> 阅读时长：约 {{ page.content | number_of_words | divided_by:180 }} 分钟</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date: "%Y-%m-%d" }}</time>
+        <span class="word-count"><i>{% include svg/code.svg %}</i> 字数：{{ page.content | number_of_words }} 字</span>
+        <span class="reading-time"><i>{% include svg/timer.svg %}</i> 阅读时长：约 {{ page.content | number_of_words | divided_by:180 }} 分钟</span>
+        <span class="word-count" id="busuanzi_container_page_pv"><i>{% include svg/eye.svg %}</i>阅读<span id="busuanzi_value_page_pv"></span>次</span>
     </div>
     <p></p>
 
@@ -30,6 +34,6 @@ layout: default
         {% endif %}
     </div>
 
-
-  {% include footer.html %}
+    {% include disqus.html %}
+    {% include footer.html %}
 </article>
