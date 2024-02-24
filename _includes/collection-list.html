@@ -1,13 +1,47 @@
+<!--<div id="collection-list">-->
+<!--    <h1 id="about">Links</h1><a id="toggle-button" class="toggle-link">{% include svg/menu.svg %}</a>-->
+<!--    <div id="links-container">-->
+<!--        {% for collection in site.collections %}-->
+<!--            {% if site.customer-collections contains collection.label and collection.name != "归档" %}-->
+<!--                <a href="{{ '/collections/' | append: collection.label }}">{{ collection.name | capitalize }}</a>-->
+<!--            {% endif %}-->
+<!--        {% endfor %}-->
+<!--        {% for collection in site.collections %}-->
+<!--            {% if site.customer-collections contains collection.label and  collection.name == "归档" %}-->
+<!--                <a href="{{ '/collections/' | append: collection.label }}">{{ collection.name | capitalize }}</a>-->
+<!--            {% endif %}-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--</div>-->
+
 <div id="collection-list">
-  <h1 id="about">Links</h1>
-  {% for collection in site.collections %}
-    {% if site.customer-collections contains collection.label and collection.name != "归档" %}
-      <a href="{{ '/collections/' | append: collection.label }}">{{ collection.name | capitalize }}</a>
-    {% endif %}
-  {% endfor %}
-  {% for collection in site.collections %}
-    {% if site.customer-collections contains collection.label and  collection.name == "归档" %}
-      <a href="{{ '/collections/' | append: collection.label }}">{{ collection.name | capitalize }}</a>
-    {% endif %}
-  {% endfor %}
+    <div class="header-container">
+        <h1 id="about">Links</h1>
+        <a id="toggle-button" class="toggle-link">{% include svg/menu.svg %}</a>
+    </div>
+    <div id="links-container">
+        {% for collection in site.collections %}
+            {% if site.customer-collections contains collection.label and collection.name != "归档" %}
+                <a href="{{ '/collections/' | append: collection.label }}">{{ collection.name | capitalize }}</a>
+            {% endif %}
+        {% endfor %}
+        {% for collection in site.collections %}
+            {% if site.customer-collections contains collection.label and  collection.name == "归档" %}
+                <a href="{{ '/collections/' | append: collection.label }}">{{ collection.name | capitalize }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
 </div>
+
+
+<script>
+    document.getElementById("toggle-button").addEventListener("click", function() {
+        var linksContainer = document.getElementById("links-container");
+        if (linksContainer.style.display === "none" || linksContainer.style.display === "") {
+            linksContainer.style.display = "block";
+        } else {
+            linksContainer.style.display = "none";
+        }
+    });
+</script>
+

@@ -41,11 +41,11 @@
 }
 
 [data-theme="dark"] #collection-list a {
-    color: #3b818c; /* 淡蓝色链接 */
+    color: #DEE2E6; /* 淡蓝色链接 */
 }
 
 [data-theme="dark"] #collection-list a:hover {
-    color: #3b818c; /* 鼠标悬停时的颜色 */
+    color: #DEE2E6; /* 鼠标悬停时的颜色 */
     background-color: #555; /* 鼠标悬停时的背景颜色 */
 }
 
@@ -218,3 +218,56 @@ main h1.post-title {
     font-weight: 300;
 }
 
+
+/*----------*/
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#collection-list .toggle-link {
+    display: none; /* 默认情况下隐藏 */
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+[data-theme="light"] #collection-list .toggle-link {
+    color: #44494D;
+}
+
+[data-theme="dark"] #collection-list .toggle-link {
+    color: #F8F9FA;
+}
+
+#links-container {
+    display: block; /* 默认显示 */
+}
+
+@media (max-width: 600px) {
+    #links-container {
+        display: none; /* 在小屏幕上默认隐藏 */
+    }
+
+    #collection-list .toggle-link {
+        display: inline-block; /* 在小屏幕上显示切换按钮 */
+    }
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#toggle-button {
+    display: none; /* 默认情况下隐藏 */
+}
+
+@media (max-width: 600px) {
+    #toggle-button {
+        display: inline-block; /* 在小屏幕上显示 */
+    }
+}
