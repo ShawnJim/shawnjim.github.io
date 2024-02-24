@@ -13,6 +13,11 @@ layout: default
         <span class="reading-time"><i style="transform: scale(2.5);">{% include svg/timer.svg %}</i> 阅读时长：约 {{ page.content | number_of_words | divided_by:180 }} 分钟</span>
     </div>
     <p></p>
+
+    <iframe plausible-embed src="https://plausible.io/shawnjim.com?embed=true&theme=light" scrolling="no" frameborder="0" loading="lazy" style="width: 1px; min-width: 100%; height: 1600px;"></iframe>
+    <div style="font-size: 14px; padding-bottom: 14px;">Stats powered by <a target="_blank" style="color: #4F46E5; text-decoration: underline;" href="https://plausible.io">Plausible Analytics</a></div>
+    <script async src="https://plausible.io/js/embed.host.js"></script>
+
     {{ content }}
   </main>
 
