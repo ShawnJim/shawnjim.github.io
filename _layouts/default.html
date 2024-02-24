@@ -23,11 +23,9 @@
   </div>
 
   <!-- 回到顶部按钮 -->
-  <button id="back-to-bottom" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">底部</button>
+  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">{% include svg/dot-arrow-up.svg %}</button>
   <!-- 回到底部按钮 -->
-  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">顶部</button>
-
-
+  <button id="back-to-bottom" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">{% include svg/dot-arrow-down.svg %}</button>
 
   <script>
       // 当用户滚动页面时显示/隐藏按钮

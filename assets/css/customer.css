@@ -1,0 +1,185 @@
+/* 通用样式 */
+#collection-list {
+    padding: 1rem;
+    border-radius: 5px; /* 轻微的圆角 */
+    margin-bottom: 1rem;
+    padding-top: 5.5em;
+}
+
+#collection-list h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#collection-list a {
+    display: block; /* 让链接占满整行 */
+    padding: 0.25rem 0; /* 上下留点空间 */
+    text-decoration: none; /* 去掉下划线 */
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+#collection-list a:hover {
+    color: #0056b3; /* 鼠标悬停时的颜色 */
+    background-color: #e2e6ea; /* 鼠标悬停时的背景颜色 */
+    text-decoration: none; /* 鼠标悬停时依然去掉下划线 */
+}
+
+/* 日间模式样式 */
+[data-theme="light"] #collection-list {
+    background-color: #f8f9fa; /* 浅灰色背景 */
+    color: #333; /* 深色文字 */
+}
+
+[data-theme="light"] #collection-list a {
+    color: #3b818c; /* Bootstrap 默认的链接颜色 */
+}
+
+/* 夜间模式样式 */
+[data-theme="dark"] #collection-list {
+    background-color: rgba(170,177,182,0.26); /* 深色背景 */
+    color: #f8f9fa; /* 浅色文字 */
+}
+
+[data-theme="dark"] #collection-list a {
+    color: #3b818c; /* 淡蓝色链接 */
+}
+
+[data-theme="dark"] #collection-list a:hover {
+    color: #3b818c; /* 鼠标悬停时的颜色 */
+    background-color: #555; /* 鼠标悬停时的背景颜色 */
+}
+
+/* 回到顶部按钮样式 */
+#back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 80px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+/* 回到底部按钮样式 */
+#back-to-bottom {
+    position: fixed;
+    bottom: 60px;
+    right: 80px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+@media (max-width: 480px) {
+    /* 回到顶部按钮样式 */
+    #back-to-top {
+        bottom: 80px;
+        right: 20px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    /* 回到底部按钮样式 */
+    #back-to-bottom {
+        bottom: 40px;
+        right: 20px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+}
+
+/* 日间模式样式 */
+[data-theme="light"] #back-to-top {
+    background-color: #f8f9fa; /* 浅灰色背景 */
+    color: #333; /* 深色文字 */
+}
+
+/* 日间模式样式 */
+[data-theme="light"] #back-to-bottom {
+    background-color: #f8f9fa; /* 浅灰色背景 */
+    color: #333; /* 深色文字 */
+}
+
+/* 夜间模式样式 */
+[data-theme="dark"] #back-to-top {
+    background-color: #333; /* 深色背景 */
+    color: #f8f9fa; /* 浅色文字 */
+}
+/* 夜间模式样式 */
+[data-theme="dark"] #back-to-bottom {
+    background-color: #333; /* 深色背景 */
+    color: #f8f9fa; /* 浅色文字 */
+}
+
+.article-stats {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.article-stats span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.article-stats i {
+    margin-right: 5px;
+    color: #007bff;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill-badge {
+    margin: 2px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pagination a,
+.pagination span {
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    color: #343A40;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pagination span.disabled {
+    background-color: #e2e6ea;
+    color: #343A40;
+}
+
+.pagination a:hover {
+    background-color: #e2e6ea;
+}
+
+/* 日间模式样式 */
+[data-theme="light"] .pagination a,
+[data-theme="light"].pagination span {
+    background-color: #f8f9fa;
+    color: #343A40;
+}
+
+/* 夜间模式样式 */
+[data-theme="dark"]  .pagination a,
+[data-theme="dark"].pagination span {
+    background-color: #343A40; /* 深色背景 */
+    color: #f8f9fa; /* 浅色文字 */
+}
+
