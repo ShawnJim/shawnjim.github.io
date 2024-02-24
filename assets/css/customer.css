@@ -286,3 +286,9 @@ main h1.post-title {
     transform: scale(1);
     margin-bottom: 0.3rem;
 }
+
+blockquote {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all; /* 或者使用 break-word */
+}
