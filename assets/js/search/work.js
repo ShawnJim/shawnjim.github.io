@@ -35,8 +35,6 @@ self.addEventListener('message', async (event) => {
     case 'init':
       await initJieba();
       documents = data;
-      const progress = 0.1
-      self.postMessage({ type: 'progress', progress });
       const allDocs = await buildIndexInBatches(documents, 50);
       idx = lunr(function () {
         this.use(lunr.zh);
