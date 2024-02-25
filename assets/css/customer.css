@@ -302,3 +302,7 @@ blockquote {
     border-bottom: none; /* 移除边框下划线 */
     color: #d14; /* 如果你还想保留悬停时的颜色变化，可以保留这一行 */
 }
+
+.search-highlight {
+  background-color: yellow;
+}

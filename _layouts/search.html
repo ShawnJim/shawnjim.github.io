@@ -11,95 +11,127 @@ layout: default
     </main>
 
     <!-- 以下是搜索页面的内容 -->
-    <input type="text" id="search-input" placeholder="搜索...">
+    <input type="text" id="search-input" placeholder="搜索..." disabled>
     <div id="search-results"></div>
-
-    <script src="/assets/js/lunr.js"></script>
-    <script src="/assets/js/lunr.stemmer.support.js"></script>
-    <script src="/assets/js/lunr.zh.js"></script>
+    <!-- 在 HTML 中添加一个状态显示区域 -->
+    <div id="index-init-status">正在加载索引...</div>
     <script>
-      /* load wasm module */
-      const _load_wasm_jieba = async () => {
-        if (window.cut !== undefined) return;
-        /* load jieba*/
-        const {
-            default: init,
-            cut
-          } = await import("/assets/js/jieba_rs_wasm.js");
-        await init();
-        window.cut = cut;
-      }
+      const worker = new Worker('/assets/js/search/work.js');
+      const statusDiv = document.getElementById('index-init-status');
+      const searchInput = document.getElementById('search-input');
+      const searchResults = document.getElementById('search-results');
 
-      // 加载 search.json 并构建索引
+      worker.addEventListener('message', (event) => {
+        const { type, results, message } = event.data;
+
+        switch (type) {
+          case 'ready':
+            statusDiv.textContent = '索引加载完成，可以进行搜索';
+            // 索引准备好后，启用搜索框
+            searchInput.disabled = false;
+            break;
+          case 'results':
+            console.log('Search results:', results);
+            // 在这里处理搜索结果的显示逻辑
+            break;
+          case 'error':
+            console.error('Worker error:', message);
+            statusDiv.textContent = '发生错误，请查看控制台';
+            break;
+          default:
+            console.error('Unknown message type from worker');
+        }
+      });
+
+      // 初始化 Worker
       fetch('/search.json')
         .then(response => response.json())
-        .then(async data => {
-          // 确保 jieba-wasm 已加载和初始化
-          await _load_wasm_jieba();
-
-          var idx = lunr(function () {
-            this.use(lunr.zh)
-            this.ref('url');
-            this.field('title');
-            this.field('content');
-
-            data.forEach(function (doc) {
-              this.add(doc);
-            }, this);
-          });
-
-          // 搜索函数
-          function search(query) {
-            var results = idx.search(query); // 执行搜索
-            displayResults(results, data, query);
-          }
-
-          // 显示搜索结果的函数
-          function displayResults(results, data, query) {
-            var resultsDiv = document.getElementById('search-results');
-            resultsDiv.innerHTML = ''; // 清空之前的搜索结果
-
-            if (results.length > 0) {
-              // 如果有搜索结果，遍历并显示
-              results.forEach(function(result) {
-                var item = data.find(function(doc) {
-                  return doc.url === result.ref;
-                });
-
-                // 创建一个链接元素并添加到结果列表
-                var link = document.createElement('a');
-                link.href = item.url;
-                link.innerHTML = '<strong>' + item.title + '</strong>';
-                resultsDiv.appendChild(link);
-
-                // 创建一个内容摘要元素并添加到结果列表
-                var contentSummary = document.createElement('p');
-                var content = item.content;
-                var startIndex = content.toLowerCase().indexOf(query.toLowerCase());
-                if (startIndex >= 0) {
-                  var endIndex = Math.min(startIndex + 100, content.length);
-                  contentSummary.innerHTML = '... ' + content.substring(startIndex, endIndex) + ' ...';
-                } else {
-                  contentSummary.innerHTML = content.substring(0, 100) + '...';
-                }
-                resultsDiv.appendChild(contentSummary);
-
-                // 添加换行符以分隔结果
-                resultsDiv.appendChild(document.createElement('br'));
-              });
-            } else {
-              // 如果没有搜索结果，显示提示信息
-              resultsDiv.textContent = '没有找到相关结果';
-            }
-          }
-
-          // 监听搜索输入
-          document.getElementById('search-input').addEventListener('input', function() {
-            var query = this.value;
-            search(query);
-          });
+        .then(data => {
+          worker.postMessage({ type: 'init', data });
         });
-    </script>
 
-  {% include footer.html %}
+      // 使用 Worker 进行搜索
+      function search(query) {
+        worker.postMessage({ type: 'search', data: { query } });
+      }
+
+      // 监听搜索输入
+      document.getElementById('search-input').addEventListener('input', function() {
+        var query = this.value;
+        search(query);
+      });
+
+      worker.onmessage = function(e) {
+          if (e.data.type === 'results') {
+              displayResults(e.data.results, e.data.query);
+          }
+      };
+
+      // function displayResults(results) {
+      //     searchResults.innerHTML = ''; // 清空之前的搜索结果
+      //
+      //     if (results.length > 0) {
+      //         results.forEach(function(result) {
+      //             var link = document.createElement('a');
+      //             link.href = result.ref;
+      //             link.innerHTML = '<strong>' + result.title + '</strong>';
+      //             searchResults.appendChild(link);
+      //
+      //             var contentSummary = document.createElement('p');
+      //             contentSummary.innerHTML = result.content.substring(0, 100) + '...';
+      //             searchResults.appendChild(contentSummary);
+      //
+      //             searchResults.appendChild(document.createElement('br'));
+      //         });
+      //         statusDiv.innerHTML = '';
+      //     } else {
+      //         searchResults.textContent = '没有找到相关结果';
+      //     }
+      // }
+
+      // 显示搜索结果的函数
+      function displayResults(results, query) {
+        searchResults.innerHTML = ''; // 清空之前的搜索结果
+
+        if (results.length > 0) {
+          // 如果有搜索结果，遍历并显示
+          results.forEach(function(result) {
+            // 如果 query 长度超过 1 并且 title 和 content 中都不包含 query，则跳过
+            // query.length > 1 &&
+            if (!result.title.includes(query) && !result.content.includes(query)) {
+              return;
+            }
+
+            // 创建一个链接元素并添加到结果列表
+            var link = document.createElement('a');
+            link.href = result.ref;
+            link.innerHTML = '<strong>' + highlight(result.title, query) + '</strong>';
+            searchResults.appendChild(link);
+
+            // 创建一个内容摘要元素并添加到结果列表
+            var contentSummary = document.createElement('p');
+            contentSummary.innerHTML = highlight(result.content.substring(0, 100), query) + '...';
+            searchResults.appendChild(contentSummary);
+
+            // 添加换行符以分隔结果
+            searchResults.appendChild(document.createElement('br'));
+          });
+        } else {
+          // 如果没有搜索结果，显示提示信息
+          searchResults.textContent = '没有找到相关结果';
+        }
+      }
+
+      // 高亮函数
+      function highlight(text, query) {
+        if (!query) {
+          return text;
+        }
+        var re = new RegExp(query, 'gi');
+        return text.replace(re, function(match) {
+          return '<span class="search-highlight">' + match + '</span>';
+        });
+      }
+
+    </script>
 </article>

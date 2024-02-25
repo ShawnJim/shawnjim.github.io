@@ -94,8 +94,8 @@
       var tokens = [];
 
       // 使用 jieba-wasm 进行分词
-      if (window.cut) {
-        window.cut(str, true).forEach(function(seg) {
+      if (self.cut) {
+        self.cut(str, true).forEach(function(seg) {
           tokens = tokens.concat(seg.split(' '))
         });
       }
