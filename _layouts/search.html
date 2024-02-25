@@ -31,7 +31,7 @@ layout: default
             searchInput.disabled = false;
             break;
           case 'results':
-            console.log('Search results:', results);
+            // console.log('Search results:', results);
             // 在这里处理搜索结果的显示逻辑
             break;
           case 'error':
@@ -66,28 +66,6 @@ layout: default
               displayResults(e.data.results, e.data.query);
           }
       };
-
-      // function displayResults(results) {
-      //     searchResults.innerHTML = ''; // 清空之前的搜索结果
-      //
-      //     if (results.length > 0) {
-      //         results.forEach(function(result) {
-      //             var link = document.createElement('a');
-      //             link.href = result.ref;
-      //             link.innerHTML = '<strong>' + result.title + '</strong>';
-      //             searchResults.appendChild(link);
-      //
-      //             var contentSummary = document.createElement('p');
-      //             contentSummary.innerHTML = result.content.substring(0, 100) + '...';
-      //             searchResults.appendChild(contentSummary);
-      //
-      //             searchResults.appendChild(document.createElement('br'));
-      //         });
-      //         statusDiv.innerHTML = '';
-      //     } else {
-      //         searchResults.textContent = '没有找到相关结果';
-      //     }
-      // }
 
       // 显示搜索结果的函数
       function displayResults(results, query) {
