@@ -292,3 +292,13 @@ blockquote {
   overflow-wrap: break-word;
   word-break: break-all; /* 或者使用 break-word */
 }
+
+#search-toggle svg {
+    transform: scale(1);
+    margin-right: 1rem;
+}
+
+#search-toggle:hover, #search-toggle:focus {
+    border-bottom: none; /* 移除边框下划线 */
+    color: #d14; /* 如果你还想保留悬停时的颜色变化，可以保留这一行 */
+}

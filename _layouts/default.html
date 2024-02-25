@@ -48,7 +48,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      console.log("121211111")
       var theme = sessionStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', theme);
     });
