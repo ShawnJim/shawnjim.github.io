@@ -1,106 +1,102 @@
 ---
 layout: default
 ---
-
 <article id="search">
   {% include header.html %}
 
     <!-- content -->
-    <main style="flex: 3;">
+  <main style="flex: 3;">
       {{ content }}
-    </main>
+  </main>
 
-    <!-- 以下是搜索页面的内容 -->
-    <input type="text" id="search-input" placeholder="搜索..." disabled>
-    <div id="search-results"></div>
-    <!-- 在 HTML 中添加一个状态显示区域 -->
-    <div id="index-init-status">正在加载索引...</div>
-    <script>
+  <!-- 以下是搜索页面的内容 -->
+  <input type="text" id="search-input" placeholder="搜索..." disabled>
+  <div id="search-results"></div>
+  <div class="progress" id="progress-bar-container" style="display: block;">
+    <div class="progress-bar custom-progress-bar" id="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">索引加载中...</div>
+  </div>
+
+  <script>
       const worker = new Worker('/assets/js/search/work.js');
-      const statusDiv = document.getElementById('index-init-status');
       const searchInput = document.getElementById('search-input');
       const searchResults = document.getElementById('search-results');
 
       worker.addEventListener('message', (event) => {
-        const { type, results, message } = event.data;
+        const { type, progress, results, message } = event.data;
 
         switch (type) {
+          case 'progress':
+            updateProgressBar(progress * 100);
+            break;
           case 'ready':
-            statusDiv.textContent = '索引加载完成，可以进行搜索';
-            // 索引准备好后，启用搜索框
             searchInput.disabled = false;
             break;
           case 'results':
-            // console.log('Search results:', results);
-            // 在这里处理搜索结果的显示逻辑
+            displayResults(results, event.data.query);
             break;
           case 'error':
             console.error('Worker error:', message);
-            statusDiv.textContent = '发生错误，请查看控制台';
             break;
           default:
             console.error('Unknown message type from worker');
         }
       });
 
-      // 初始化 Worker
+      // 更新进度条
+      function updateProgressBar(progress) {
+        const progressBar = document.getElementById('progress-bar');
+        progressBar.style.width = progress + '%';
+        progressBar.setAttribute('aria-valuenow', progress);
+        if (progress === 100) showStatusAndHideProgressBar();
+      }
+
+      // 显示提示组件并自动隐藏
+      function showStatusAndHideProgressBar() {
+        const progressBarContainer = document.getElementById('progress-bar-container');
+        const progressBar = document.getElementById('progress-bar');
+        progressBar.innerText = '索引加载完成!';
+        progressBar.style.background = '#118fbf';
+        setTimeout(() => {
+          progressBarContainer.style.display = 'none';
+        }, 3000); // 3秒后隐藏提示
+      }
+
       fetch('/search.json')
         .then(response => response.json())
         .then(data => {
           worker.postMessage({ type: 'init', data });
         });
 
-      // 使用 Worker 进行搜索
       function search(query) {
         worker.postMessage({ type: 'search', data: { query } });
       }
 
-      // 监听搜索输入
-      document.getElementById('search-input').addEventListener('input', function() {
+      searchInput.addEventListener('input', function() {
         var query = this.value;
         search(query);
       });
 
-      worker.onmessage = function(e) {
-          if (e.data.type === 'results') {
-              displayResults(e.data.results, e.data.query);
-          }
-      };
-
-      // 显示搜索结果的函数
       function displayResults(results, query) {
-        searchResults.innerHTML = ''; // 清空之前的搜索结果
+        searchResults.innerHTML = '';
 
         if (results.length > 0) {
-          // 如果有搜索结果，遍历并显示
           results.forEach(function(result) {
-            // 如果 query 长度超过 1 并且 title 和 content 中都不包含 query，则跳过
-            // query.length > 1 &&
-            if (!result.title.includes(query) && !result.content.includes(query)) {
-              return;
-            }
-
-            // 创建一个链接元素并添加到结果列表
             var link = document.createElement('a');
             link.href = result.ref;
             link.innerHTML = '<strong>' + highlight(result.title, query) + '</strong>';
             searchResults.appendChild(link);
 
-            // 创建一个内容摘要元素并添加到结果列表
             var contentSummary = document.createElement('p');
             contentSummary.innerHTML = highlight(result.content.substring(0, 100), query) + '...';
             searchResults.appendChild(contentSummary);
 
-            // 添加换行符以分隔结果
             searchResults.appendChild(document.createElement('br'));
           });
         } else {
-          // 如果没有搜索结果，显示提示信息
           searchResults.textContent = '没有找到相关结果';
         }
       }
 
-      // 高亮函数
       function highlight(text, query) {
         if (!query) {
           return text;
@@ -110,6 +106,5 @@ layout: default
           return '<span class="search-highlight">' + match + '</span>';
         });
       }
-
-    </script>
+  </script>
 </article>

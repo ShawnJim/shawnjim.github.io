@@ -2,7 +2,7 @@ self.importScripts('/assets/js/search/lunr.js', '/assets/js/search/lunr.stemmer.
 
 let idx;
 let jiebaInitialized = false;
-let documents; // 添加一个全局变量来存储文档数据
+let documents;
 
 async function initJieba() {
   const { default: init, cut } = await import('/assets/js/search/jieba_rs_wasm.js');
@@ -11,24 +11,42 @@ async function initJieba() {
   jiebaInitialized = true;
 }
 
+async function buildIndexInBatches(docs, batchSize) {
+  let allDocs = [];
+  for (let i = 0; i < docs.length; i += batchSize) {
+    const batch = docs.slice(i, i + batchSize);
+    batch.forEach((doc) => {
+      const contentTokens = self.cut(doc.content, true);
+      const content = contentTokens.join(' ');
+      allDocs.push({ ...doc, content });
+    });
+    const progress = Math.min((i + batchSize) / docs.length, 1);
+    if (progress != 1) {
+      self.postMessage({ type: 'progress', progress });
+    }
+  }
+  return allDocs;
+}
+
 self.addEventListener('message', async (event) => {
   const { type, data } = event.data;
 
   switch (type) {
     case 'init':
       await initJieba();
-      documents = data; // 在初始化时保存文档数据
+      documents = data;
+      const allDocs = await buildIndexInBatches(documents, 50);
       idx = lunr(function () {
         this.use(lunr.zh);
         this.ref('url');
         this.field('title');
         this.field('content');
 
-        documents.forEach((doc) => {
-          const contentTokens = self.cut(doc.content, true);
-          const content = contentTokens.join(' ');
-          this.add({ ...doc, content });
-        }, this);
+        allDocs.forEach((doc) => {
+          this.add(doc);
+        });
+        const progress = 1
+        self.postMessage({ type: 'progress', progress });
       });
       self.postMessage({ type: 'ready' });
       break;
@@ -41,7 +59,7 @@ self.addEventListener('message', async (event) => {
       const tokens = self.cut(query, true);
       const queryString = tokens.join(' ');
       var results = idx.search(queryString).map(function(result) {
-        var doc = documents.find(d => d.url === result.ref); // 使用全局变量 documents 来查找文档
+        var doc = documents.find(d => d.url === result.ref);
         return {
           title: doc.title,
           content: doc.content,
