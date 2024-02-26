@@ -3,13 +3,15 @@ layout: cv
 title: CV
 ---
 
-<h1 class="about">{{ site.author.name }}</h1>
+<h1 class="about">金振潇 <{{ site.author.name }}></h1>
 <ul>
     <li>{% include svg/pin-alt.svg %} <span>{{ site.address }}</span></li>
     <li>{% include svg/mail.svg %}<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
     <li>{% include svg/internet.svg %}<a href="{{ site.url }}">{{site.url }}</a></li>
     <li>{% include svg/github.svg %}<a href="https://github.com/{{ site.social.github }}">{{ site.social.github }}</a></li>
 </ul>
+
+---
 
 # 个人优势
 
@@ -23,6 +25,8 @@ title: CV
 8.	熟悉AI工具辅助编程（如ChatGPT、Gemini、Copilot）. 拥有LLM工程化经验，基于LangChain实现了使用自然语言对Supers et进行图表生成的项目。
 9.	深度参与开源社区建设，成为Apache ShenYu Committer和DolphinScheduler Contributor。
 10.	能够流畅阅读英文文档。
+
+---
 
 # 工作经历
 
@@ -44,6 +48,8 @@ title: CV
 1.	开发爬虫和自动化运营脚本,以提高地铁广告业务的效率和精度。
 2.	设计和实现数据 ETL 流程,将数据成功入库,并提供可靠的报表分析支持。
 3.	研发中标商业项目的后台系统,以满足业务需求并提高工作效率。
+
+---
 
 # 项目经历
 
@@ -77,7 +83,7 @@ title: CV
 -	通过采用集群化服务，相较于旧业务系统（基于PHP实现），2C4G双节点的数据系统实例使业务系统访问接口的吞吐量提升了近200%。同时，经过数据系统优化，大部分数据报表接口响应时间从分钟级别优化到了秒级别。
 -	实现接口吞吐能力近 600 TPS，每小时接收并处理来自温度计供应商鼎为的近10万条温度数据，并将其存储入数据仓库。对在途过程中的数据进行实时监控和分析，为冷链业务提供可视化监控和告警支持。
 
-### 个人项目 - 自然语言生成Superset图表	开发	2024.01-2024.02
+## 个人项目 - 自然语言生成Superset图表	开发	2024.01-2024.02
 
 这是一个个人项目，旨在通过开发实践深入学习LangChain相关知识。
 
@@ -89,7 +95,7 @@ Python 3.11作为开发语言。
 利用LangChain库处理自然语言理解和生成任务。
 采用Prompt  Engineering技术优化模型的响应效果。
 
-### 上海雷默 - 新闻自动化脚本平台	后端开发	2020.03-2020.04
+## 上海雷默 - 新闻自动化脚本平台	后端开发	2020.03-2020.04
 
 使用技术：WxPython + XML
 
