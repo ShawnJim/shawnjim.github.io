@@ -3,7 +3,7 @@ layout: cv
 title: CV
 ---
 
-<h1 class="about">金振潇 <{{ site.author.name }}></h1>
+<h1 class="about">金振潇 {{ site.author.name }} </h1>
 <ul>
     <li>{% include svg/pin-alt.svg %} <span>{{ site.address }}</span></li>
     <li>{% include svg/mail.svg %}<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
