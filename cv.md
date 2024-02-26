@@ -1,6 +1,7 @@
 ---
 layout: cv
 title: CV
+comments: true
 ---
 
 <h1 class="about">金振潇 {{ site.author.name }} </h1>

@@ -86,51 +86,5 @@ layout: default
             });
         });
     });
-//document.addEventListener('DOMContentLoaded', function () {
-//    document.querySelectorAll('.post-content .highlighter-rouge').forEach(function (highlightContainer) {
-//        // 检查是否已经存在标题栏
-//        if (highlightContainer.querySelector('.code-title-bar')) {
-//            return; // 如果已经存在，就不再添加
-//        }
-//
-//        // 获取代码语言
-//        var languageClass = highlightContainer.className.match(/language-(\w+)/);
-//        if (!languageClass || languageClass[1] === 'plaintext') {
-//            return; // 如果没有找到语言类或语言是plaintext，则跳过
-//        }
-//        var language = languageClass[1];
-//
-//        // 创建标题栏 div
-//        var titleBar = document.createElement('div');
-//        titleBar.className = 'code-title-bar';
-//        titleBar.textContent = language.toUpperCase(); // 设置语言到标题栏，并转换为大写
-//
-//        // 创建复制按钮
-//        var copyButton = document.createElement('button');
-//        copyButton.className = 'copy-btn';
-//        copyButton.textContent = 'Copy';
-//        titleBar.appendChild(copyButton);
-//
-//        // 将标题栏插入到容器的最前面
-//        highlightContainer.insertBefore(titleBar, highlightContainer.firstChild);
-//
-//        // 选择代码块
-//        var codeBlock = highlightContainer.querySelector('pre code');
-//
-//        // 设置复制按钮功能
-//        copyButton.addEventListener('click', function () {
-//            navigator.clipboard.writeText(codeBlock.textContent).then(function () {
-//                // 复制成功后的操作
-//                copyButton.textContent = 'Copied!';
-//                setTimeout(function () {
-//                    copyButton.textContent = 'Copy';
-//                }, 2000);
-//            }, function (err) {
-//                // 复制失败后的操作
-//                console.error('Could not copy text: ', err);
-//            });
-//        });
-//    });
-//});
 
   </script>
