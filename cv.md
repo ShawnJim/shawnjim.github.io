@@ -21,7 +21,7 @@ title: CV
 4.	掌握Java核心知识，包括JVM、并发编程、集合、SPI等，具备良好的编码能力，能熟练应用设计模式。
 5.	掌握Docker、Podman等容器技术，了解Cgroup、Containerd等底层技术，具备服务容器化实践经验。
 6.	熟悉大数据相关组件，如Impala、Kudu、Hive、StreamSets等，具备线上异常问题排查和调优经验。
-7.	熟悉MySQL、Redis、Memcached等数据库 | 缓存组件，理解事务、锁、索引等原理，熟悉SQL调优和缓存相关的数据结构。
+7.	熟悉MySQL、Redis、Memcached等数据库|缓存组件，理解事务、锁、索引等原理，熟悉SQL调优和缓存相关的数据结构。
 8.	熟悉AI工具辅助编程（如ChatGPT、Gemini、Copilot）. 拥有LLM工程化经验，基于LangChain实现了使用自然语言对Superset进行图表生成的项目。
 9.	深度参与开源社区建设，成为Apache ShenYu Committer和DolphinScheduler Contributor。
 10.	能够流畅阅读英文文档。
