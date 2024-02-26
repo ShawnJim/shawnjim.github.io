@@ -366,6 +366,7 @@ main h1.post-title {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     z-index: 10;
+    font-size: 18px;
 }
 
 /* 复制按钮样式 */
@@ -391,6 +392,7 @@ main h1.post-title {
     border-radius: 4px;
     margin: 1em 0;
     padding-top: 30px; /* 根据标题栏的高度调整 */
+    font-size: 18px;
 }
 
 
@@ -407,11 +409,21 @@ blockquote {
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: break-all; /* 或者使用 break-word */
+    font-size: 18px;
 }
 
 li {
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: break-all; /* 或者使用 break-word */
+    font-size: 16px;
 }
 /* url超出边界问题解决 */
+
+p {
+    font-size: 16px;
+}
+
+strong {
+    font-size: 16px;
+}
