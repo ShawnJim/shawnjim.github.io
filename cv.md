@@ -4,6 +4,8 @@ title: CV
 comments: true
 ---
 
+[export cv.pdf](/assets/files/cv.pdf)
+
 <h1 class="about">金振潇 {{ site.author.name }} </h1>
 <ul>
     <li>{% include svg/pin-alt.svg %} <span>{{ site.address }}</span></li>
