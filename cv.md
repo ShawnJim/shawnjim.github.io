@@ -8,7 +8,8 @@ title: CV
     <li>{% include svg/pin-alt.svg %} <span>{{ site.address }}</span></li>
     <li>{% include svg/mail.svg %}<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
     <li>{% include svg/internet.svg %}<a href="{{ site.url }}">{{site.url }}</a></li>
-    <li>{% include svg/github.svg %}<a href="https://github.com/{{ site.social.github }}">{{ site.social.github }}</a></li>
+    <li>{% include svg/github.svg %}<a href="https://github.com/{{ site.social.github }}"> https://github.com/{{ site.social.github }}</a></li>
+    <li>{% include svg/phone.svg %}<a href="https://github.com/{{ site.phone }}">{{ site.phone }}</a></li>
 </ul>
 
 ---
@@ -21,7 +22,7 @@ title: CV
 4.	掌握Java核心知识，包括JVM、并发编程、集合、SPI等，具备良好的编码能力，能熟练应用设计模式。
 5.	掌握Docker、Podman等容器技术，了解Cgroup、Containerd等底层技术，具备服务容器化实践经验。
 6.	熟悉大数据相关组件，如Impala、Kudu、Hive、StreamSets等，具备线上异常问题排查和调优经验。
-7.	熟悉MySQL、Redis、Memcached 等数据库&缓存组件，理解事务、锁、索引等原理，熟悉SQL调优和缓存相关的数据结构。
+7.	熟悉MySQL、Redis、Memcached 等数据库 & 缓存组件，理解事务、锁、索引等原理，熟悉SQL调优和缓存相关的数据结构。
 8.	熟悉AI工具辅助编程（如ChatGPT、Gemini、Copilot）. 拥有LLM工程化经验，基于LangChain实现了使用自然语言对Superset进行图表生成的项目。
 9.	深度参与开源社区建设，成为Apache ShenYu Committer和DolphinScheduler Contributor。
 10.	能够流畅阅读英文文档。
@@ -53,6 +54,8 @@ title: CV
 
 # 项目经历
 
+---
+
 ## 生生物流 - 数据中台	后端工程师 | 组长	2019.08-至今
 
 内容:
@@ -80,12 +83,14 @@ title: CV
 12.	后端服务基础框架：SpringBoot + SSM 。
 
 业绩:
--	通过采用集群化服务，相较于旧业务系统（基于PHP实现），2C4G双节点的数据系统实例使业务系统访问接口的吞吐量提升了近200%。同时，经过数据系统优化，大部分数据报表接口响应时间从分钟级别优化到了秒级别。
--	实现接口吞吐能力近 600 TPS，每小时接收并处理来自温度计供应商鼎为的近10万条温度数据，并将其存储入数据仓库。对在途过程中的数据进行实时监控和分析，为冷链业务提供可视化监控和告警支持。
+  -	通过采用集群化服务，相较于旧业务系统（基于PHP实现），2C4G双节点的数据系统实例使业务系统访问接口的吞吐量提升了近200%。同时，经过数据系统优化，大部分数据报表接口响应时间从分钟级别优化到了秒级别。
+  -	实现接口吞吐能力近 600 TPS，每小时接收并处理来自温度计供应商鼎为的近10万条温度数据，并将其存储入数据仓库。对在途过程中的数据进行实时监控和分析，为冷链业务提供可视化监控和告警支持。
+
+---
 
 ## 个人项目 - 自然语言生成Superset图表	开发	2024.01-2024.02
 
-这是一个个人项目，旨在通过开发实践深入学习LangChain相关知识。
+这是个人项目，旨在通过开发实践深入学习LangChain相关知识。
 
 主要功能：
 实现使用自然语言自动生成Superset图表的功能，提升数据可视化的效率和便捷性。
@@ -94,6 +99,8 @@ title: CV
 Python 3.11作为开发语言。
 利用LangChain库处理自然语言理解和生成任务。
 采用Prompt  Engineering技术优化模型的响应效果。
+
+---
 
 ## 上海雷默 - 新闻自动化脚本平台	后端开发	2020.03-2020.04
 
